@@ -6,6 +6,7 @@ gem 'rails', '4.0.1'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 
@@ -13,7 +14,7 @@ gem 'sass-rails', '~> 4.0.0'
 gem 'uglifier', '>= 1.3.0'
 
 # wordnik api to get synonyms
-gem "wordnik", "~> 4.12"
+gem 'wordnik', '~> 4.12'
 
 # Use CoffeeScript for .js.coffee assets and views
 gem 'coffee-rails', '~> 4.0.0'
@@ -46,3 +47,6 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+gem "pry"
+gem "omniauth-twitter", "~> 1.0.1"
+gem 'twitter', "~> 5.0.1"

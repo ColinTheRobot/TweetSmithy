@@ -1,0 +1,24 @@
+<html>
+     <head>
+        <title>Welcome to your TweetSmithy!</title>
+     </head>
+<body>
+    <div>
+      <center>
+        <h1> Anvil </h1>
+      <p>
+        <%= form_tag "/search", method: "GET" do %>
+            Start Smithing:
+        <%= text_field_tag :search_word %>
+        <%= submit_tag "get those synonyms" %>
+    <% end %>
+    </p>
+      </center>
+    </div>
+   <%= yield %>
+<br/><br/>
+
+
+
+
+</html>
