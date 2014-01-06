@@ -4,18 +4,16 @@ class WordnikController < ApplicationController
   end
 
   def search
-    query = params[:search_word] 
-    @words = Wordnik.word.get_related(query, :type => 'synonym').first["words"]
+    query = params[:search_word].split
+    @words = {}
+    query.each do |word|
+      synonyms = Wordnik.word.get_related(word, :type => 'synonym').first["words"]
+      @words[word] = synonyms
+
+
+    end
+
+   # @words = query.map { |word| Wordnik.word.get_related(word, :type => 'hypernym').first["words"] }
   end
 end
-    # initialize_wordnik
-
-#     if (params[:related_word] || params[:commit]) # user has submitted the form or clicked a link
-#       if params[:commit]=="search"
-#         @word = Wordnik::Word.find(params[:related_word])
-#       end
-#       @related = @word.related
-#     end
-#   end
-# end
-
+    

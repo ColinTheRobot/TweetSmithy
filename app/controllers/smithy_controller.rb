@@ -14,7 +14,5 @@ class SmithyController < ApplicationController
   options.merge!(ENV['WORDNIK_API_KEY'])
     @wordnik = Wordnik::Wordnik.new(options)
   end
-
-
   
 end
