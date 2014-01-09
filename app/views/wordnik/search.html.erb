@@ -1,7 +1,15 @@
 
-<%= @original_tweet %>
 
 <% @words.each do |key, value| %>
 <p><%= "The word #{key}: has the following synonyms:" %></p>
 <font color="red"><table><%= "#{value}" %></table></font>
 <% end %>
+
+
+<!--<% if !current_user.nil? %>
+ <%= form_for(@tweeting) do |tweet_form| %> 
+  <%= text_form.text_area :tweet_content, :id => "tweet" %>
+  <%= tweet_form.submit "Tweet" %>
+  <% else %>
+    <p>You must log in to send a tweet.</p>
+<% end %>-->
