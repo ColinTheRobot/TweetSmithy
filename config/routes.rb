@@ -1,4 +1,5 @@
 MyFinalProject::Application.routes.draw do
+  get "tweeting/post"
   root 'smithy#index'
   get '/search', to: 'wordnik#search'
   get '/auth/:provider/callback', to: 'sessions#create'
