@@ -14,11 +14,12 @@ class TweetingController < ApplicationController
   end
 
   def create
-    @tweet = current_user.Tweet.new(twitter_params)[:message]
+    @tweet = Tweet.new(twitter_params)[:message]
+
   end
 
-  def twitter_params
-    params.require(:tweet).permit(:message)
-  end
+  # def twitter_params
+  #   params.require(:tweet).permit(:message)
+  # end
 end
 
