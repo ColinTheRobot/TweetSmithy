@@ -1,11 +1,15 @@
 
 <h3><%= "Your original tweet:" %></h3>
-<p><center><%= params[:search_word] %></center></p>
+<p>
+  <center>
+    <%= params[:search_word] %>
+  </center>
+</p>
 
 <p>
-  <%= form_for :tweet, url: tweets_path, method: :post do |f| %>
-    <%= f.text_field :message, size: 150 %>
-    <%= f.submit "Send New Tweet" %> 
+  <%= form_tag tweet_path do %>
+    <%= text_field_tag :message, size: 150 %>
+    <%= submit_tag "Send New Tweet" %> 
   <% end %>
 </p>
 

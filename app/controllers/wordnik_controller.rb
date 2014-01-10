@@ -12,6 +12,18 @@ class WordnikController < ApplicationController
         @words[word] = wordnik_results.first['words']
       end
     end
+  
+
+  
+
+  # def create
+  #   @tweet = current_user.Tweet.new(twitter_params)[:message]
+  # end
+
+  # def twitter_params
+  #   params.require(:tweet).permit(:message)
+  # end
+  
   end
 end
     
