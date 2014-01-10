@@ -9,7 +9,7 @@
       <p>
         <%= form_tag "/search", method: "GET" do %>
             Your Anvil:
-        <%= text_field_tag :search_word, "Type your tweet here...", size: 75 %>
+        <%= text_field_tag :search_word, "Type your tweet here...", size: 150 %>
         <%= submit_tag "get those synonyms" %>
     <% end %>
     </p>

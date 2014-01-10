@@ -1,11 +1,14 @@
 MyFinalProject::Application.routes.draw do
-  get "tweeting/post"
+  post "tweets/path"
   root 'smithy#index'
   get '/search', to: 'wordnik#search'
   get '/auth/:provider/callback', to: 'sessions#create'
   get '/auth/failure', to: redirect('/')
   get 'signout', to: 'sessions#destroy', as: 'signout'
-  # get 'search', to: 'applications#search'
+    resources :tweets, only: [:new, :create]
+    resources :sessions, only: [:create, :destroy]
+    resource :home, only: [:show]
+  
 
 end
 

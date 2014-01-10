@@ -22,7 +22,6 @@ class User < ActiveRecord::Base
       config.access_token = oauth_token
       config.access_token_secret = oauth_secret
     end
-#current_user.tweet(params[tweet_mesage])
     client.update(tweet)
   end
 

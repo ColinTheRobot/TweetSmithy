@@ -4,17 +4,17 @@ class TweetingController < ApplicationController
 #method 1
   # def post
   #   @post = Tweet.new(params[:post])
-  #   Twitter.update "Tweet"
-  #  # @tweeting = Tweet.new
+  #   current_user.update "Tweet"
+  #   @tweeting = Tweet.new
   # end
 
   #method 2
   def new
+    @tweet = Tweet.new
   end
 
   def create
-    current_user.tweet(twitter_params)[:message]
-    # current_user.tweet(params[tweet_mesage])
+    @tweet = current_user.Tweet.new(twitter_params)[:message]
   end
 
   def twitter_params
