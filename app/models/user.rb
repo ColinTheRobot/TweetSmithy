@@ -14,15 +14,15 @@ class User < ActiveRecord::Base
       user.name = auth["info"]["nickname"]
     end
   end
-#to post to twitter
+
   def tweet(tweet)
-    client = Twitter::REST.new do |config|
+    client = Twitter::REST::Client.new do |config|
       config.consumer_key = ENV['TWITTER_KEY_SMITHY']
       config.consumer_secret = ENV['TWITTER_SECRET_SMITHY']
       config.access_token = oauth_token
       config.access_token_secret = oauth_secret
     end
-    
+
     client.update(tweet)
   end
 

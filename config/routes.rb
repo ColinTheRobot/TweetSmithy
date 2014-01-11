@@ -7,7 +7,7 @@ MyFinalProject::Application.routes.draw do
   get '/auth/failure', to: redirect('/')
   get 'signout', to: 'sessions#destroy', as: 'signout'
   post '/tweet', to: 'tweeting#create', as: 'tweet'
-  #  resources :tweets, only: [:new, :create]
+    # resources :tweets, only: [:new, :create]
     resources :sessions, only: [:create, :destroy]
     resource :home, only: [:show]
   
