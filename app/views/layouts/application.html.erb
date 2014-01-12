@@ -16,7 +16,7 @@
             <div class="container">
               <nav>
             <% if current_user %>
-          Signed in as <%= current_user.name %>!
+          <font color="black">Signed in as <%= current_user.name %>! </font>
               <%= link_to "Sign out", signout_path %>
             <% else %>
              <%= link_to "Sign in with Twitter", "/auth/twitter" %>
@@ -33,6 +33,13 @@
           <div class="container">
           <%= yield %>
         </div>
+        <p>
+
+
+
+
+
+        </p>
           <h4>
             What is the Smithy?
           </h4>

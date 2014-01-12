@@ -9,7 +9,8 @@
       <p>
         <%= form_tag "/search", method: "GET" do %>
         <%= text_field_tag :search_word, "This is your anvil—type your tweet here.", size: 150 %>
-        <%= submit_tag "get those synonyms" %>
+        <input class="btn btn-default" type="submit" value="Submit"></button>
+        <%#= submit_tag "get those synonyms" %>
     <% end %>
     </p>
       </center>

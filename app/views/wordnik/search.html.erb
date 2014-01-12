@@ -8,9 +8,9 @@
 
 <p>
   <%= form_tag tweet_path do %>
-    <%= text_field_tag :message, "Send new tweet", :size => 150 %>
-    <%= submit_tag "Send New Tweet" %> 
-    
+    <%= text_field_tag :message, "", :size => 150 %>
+    <%#= submit_tag "Send New Tweet" %> 
+    <input class="btn btn-default" type="submit" value="Send new tweet"></button>
   <% end %>
 </p>
 
