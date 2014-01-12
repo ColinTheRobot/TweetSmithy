@@ -9,7 +9,7 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-MyFinalProject::Application.config.secret_key_base = '76cdb86d6de518e1dec6a57a9d737328d4c597e860650fe94236bd0f30db02c07a6f2fcd85dd9f588ac63323b3ab62f3dd97ee8e74adfc2085ae6e92ddd4e28f'
+MyFinalProject::Application.config.secret_key_base = ENV['SMITHY_COOKIE_SECRET']
 
 
 
