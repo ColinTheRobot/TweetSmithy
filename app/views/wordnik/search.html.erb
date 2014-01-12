@@ -1,4 +1,5 @@
 
+
 <h3><%= "Your original tweet:" %></h3>
 <p>
   <center>
@@ -8,15 +9,17 @@
 
 <p>
   <%= form_tag tweet_path do %>
-    <%= text_field_tag :message, "", :size => 150 %>
+    <%= text_field_tag :message, " ", :size => 150 %>
     <%#= submit_tag "Send New Tweet" %> 
     <input class="btn btn-default" type="submit" value="Send new tweet"></button>
   <% end %>
 </p>
 
-<% @words.each do |key, value| %>
-<p><%= "The word '#{key}': has the following synonyms:" %></p>
-<font color="red"><%= "#{value}" %></font>
+
+<% @words.each do |orig, synonyms| %>
+<%# synonyms.join(", ") %>
+<p><%= "The word " %><strong><%= "'#{orig}'"%></strong><%=": has the following synonyms:" %></p>
+<font color="red"><%= "#{synonyms}" %></font>
 <% end %>
 
 
