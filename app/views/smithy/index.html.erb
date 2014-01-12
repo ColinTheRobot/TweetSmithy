@@ -8,8 +8,7 @@
         <h1> TweetSmithy </h1>
       <p>
         <%= form_tag "/search", method: "GET" do %>
-            Your Anvil:
-        <%= text_field_tag :search_word, "Type your tweet here...", class: "form_control", size: 150 %>
+        <%= text_field_tag :search_word, "This is your anvil—type your tweet here.", size: 150 %>
         <%= submit_tag "get those synonyms" %>
     <% end %>
     </p>

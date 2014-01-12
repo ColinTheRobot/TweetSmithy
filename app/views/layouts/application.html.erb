@@ -8,6 +8,19 @@
 </head>
 <body>
     <div id="container>"
+      <div class="row">
+        <div class="span9"><%= yield %></div>
+        <div class="span3">
+          <h2>What is your Smithy?</h2>
+          <p>
+            TweetSmithy aims to simplify and automate the wordsmithing that occurs while livetweeting events. 
+          </p>
+            <p>
+              Imagine this, while attending a presentation at conference the presenter drops a brilliant oneliner perfect for your Twitter followers. Your fingers quickly type out the quote while attempting to pay attention to the presentation. "Oh no!" That perfect quote is a hundred characters over! So you start paring down words and abbreviating others, hoping to avoid switching 'are' to 'r'. You switch a comma and spaces to an em dash. The tweet finally fits, but the presenter is onto the next topic and you missed the introduction as you frantically edited. 
+          </p>
+          <p>
+            TweetSmithy automates this process by providing shorter synonyms, related words and abbreviations. It will point out passive voice and suggest you make it active. 
+          </p>
         <div id="user_nav">
             <% if current_user %>
           Signed in as <%= current_user.name %>!
@@ -16,7 +29,7 @@
              <%= link_to "Sign in with Twitter", "/auth/twitter" %>
             <% end %>
     </div>
-    <%= yield %>
+    
   </div>
 </body>
 </html>
