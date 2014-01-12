@@ -13,12 +13,18 @@
       <header class="navbar navbar-fixed top navbar-inverse">
           <div class="navbar-inner">
             <div class="container">
+              <nav>
             <% if current_user %>
           Signed in as <%= current_user.name %>!
               <%= link_to "Sign out", signout_path %>
             <% else %>
              <%= link_to "Sign in with Twitter", "/auth/twitter" %>
             <% end %>
+              </nav>
+            </div>
+          </div>
+        </header>
+
       <div class="row">
         <div class="span9"><%= yield %></div>
         <div class="span3">
