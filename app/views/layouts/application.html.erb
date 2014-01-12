@@ -9,7 +9,8 @@
 
 
 <body>
-    <div id="container>"
+    
+      <div class="container">
       <header class="navbar navbar-fixed top navbar-inverse">
           <div class="navbar-inner">
             <div class="container">
@@ -26,9 +27,15 @@
         </header>
 
       <div class="row">
-        <div class="span9"><%= yield %></div>
+        <div class="span9">
+        </div>
         <div class="span3">
-          <h4>What is the Smithy?</h4>
+          <div class="container">
+          <%= yield %>
+        </div>
+          <h4>
+            What is the Smithy?
+          </h4>
           <p>
             TweetSmithy aims to simplify and automate the wordsmithing that occurs while livetweeting events. 
           </p>
@@ -40,7 +47,6 @@
           </p>
         
     </div>
-    
   </div>
 </body>
 </html>
