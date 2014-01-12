@@ -11,7 +11,7 @@
       <div class="row">
         <div class="span9"><%= yield %></div>
         <div class="span3">
-          <h2>What is your Smithy?</h2>
+          <h4>What is the Smithy?</h4>
           <p>
             TweetSmithy aims to simplify and automate the wordsmithing that occurs while livetweeting events. 
           </p>
@@ -21,7 +21,7 @@
           <p>
             TweetSmithy automates this process by providing shorter synonyms, related words and abbreviations. It will point out passive voice and suggest you make it active. 
           </p>
-        <div id="user_nav">
+        <header class =div id="user_nav">
             <% if current_user %>
           Signed in as <%= current_user.name %>!
               <%= link_to "Sign out", signout_path %>
