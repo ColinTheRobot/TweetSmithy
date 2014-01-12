@@ -6,8 +6,19 @@
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
+
+
 <body>
     <div id="container>"
+      <header class="navbar navbar-fixed top navbar-inverse">
+          <div class="navbar-inner">
+            <div class="container">
+            <% if current_user %>
+          Signed in as <%= current_user.name %>!
+              <%= link_to "Sign out", signout_path %>
+            <% else %>
+             <%= link_to "Sign in with Twitter", "/auth/twitter" %>
+            <% end %>
       <div class="row">
         <div class="span9"><%= yield %></div>
         <div class="span3">
@@ -21,15 +32,7 @@
           <p>
             TweetSmithy automates this process by providing shorter synonyms, related words and abbreviations. It will point out passive voice and suggest you make it active. 
           </p>
-        <header class ="navbar navbar-fixed top navbar-inverse">
-          <div class="navbar-inner">
-            <div class="container">
-            <% if current_user %>
-          Signed in as <%= current_user.name %>!
-              <%= link_to "Sign out", signout_path %>
-            <% else %>
-             <%= link_to "Sign in with Twitter", "/auth/twitter" %>
-            <% end %>
+        
     </div>
     
   </div>
