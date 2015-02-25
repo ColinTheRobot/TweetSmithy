@@ -12,37 +12,5 @@ class WordnikController < ApplicationController
         @words[word] = wordnik_results.first['words']
       end
     end
-  
-
-  
-
-  # def create
-  #   @tweet = current_user.Tweet.new(twitter_params)[:message]
-  # end
-
-  # def twitter_params
-  #   params.require(:tweet).permit(:message)
-  # end
-  
   end
 end
-    
-    #working code below
-# class WordnikController < ApplicationController
-#   def index
-#     # initialize_wordnik will set up the @wordnik object, which we can then use to call the wordnik api.
-#   end
-
-#   def search
-#     query = params[:search_word].split
-#     @words = {}
-#     query.each do |word|
-#       synonyms = Wordnik.word.get_related(word, :type => 'synonym').first["words"]
-#       @words[word] = synonyms
-#     end
-#       # @words.each do |key, value| 
-#       # puts "The word #{key}: has the synonyms #{value}"
-#     # end
-#   end
-# end
-    
