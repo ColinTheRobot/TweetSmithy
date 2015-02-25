@@ -1,24 +1,4 @@
-MyFinalProject::Application.routes.draw do
- 
-  root 'smithy#index'
-  get '/about', to: 'pages#about'
-  get '/search', to: 'wordnik#search'
-  # post '/search', to: 'tweeting#new'
-  get '/auth/:provider/callback', to: 'sessions#create'
-  get '/auth/failure', to: redirect('/')
-  get 'signout', to: 'sessions#destroy', as: 'signout'
-  post '/tweet', to: 'tweeting#create', as: 'tweet'
-    # resources :tweets, only: [:new, :create]
-    resources :sessions, only: [:create, :destroy]
-    resource :home, only: [:show]
-  
-
-end
-
-
-  # match 'auth/failure', to: redirect('/')
-  # match 'signout', to: 'sessions#destroy', as: 'signout'
-
+Rails.application.routes.draw do
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -73,4 +53,4 @@ end
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-
+end
