@@ -16,28 +16,18 @@ class User < ActiveRecord::Base
   end
 
   def tweet(tweet)
-    client = Twitter::REST::Client.new do |config|
+    client = request_client
+    client.update(tweet)
+  end
+
+  private
+
+  def request_client
+    Twitter::REST::Client.new do |config|
       config.consumer_key = ENV['TWITTER_KEY_SMITHY']
       config.consumer_secret = ENV['TWITTER_SECRET_SMITHY']
       config.access_token = oauth_token
       config.access_token_secret = oauth_secret
     end
-
-    client.update(tweet)
   end
-
-  # def twitter
-  #   if provider == "twitter"
-  #     @twitter ||= Twitter::Client.new(oauth_token: oauth_token, oauth_token_secret: oauth_secret)
-  #   end
-  # end
 end
-
-#method 1
-# def self.oauth(auth)
-#  if User.find_by_uid(auth['uid']).nil?
-#    @user = User.create({ :uid => auth['uid'], :username => auth['info']['nickname'], :token => auth['credentials']['token'], :secret => auth['credentials']['secret'] })
-#  else
-#    @user = User.find_by_uid(auth['uid'])
-#  end
-# end
