@@ -3,12 +3,12 @@ class WordnikController < ApplicationController
   end
 
   def search
-    words = {}
+    @words = {}
 
     parsed_query.each do |word|
       synonyms = Wordnik.word.get_related(word, type: 'synonym')
 
-      words[word] = synonyms.first['words'] unless synonyms.empty?
+      @words[word] = synonyms.first['words'] unless synonyms.empty?
     end
   end
 
