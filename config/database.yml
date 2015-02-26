@@ -5,9 +5,9 @@ development:
   database: tweetsmithy-develop
   pool: 5
 
-test: &TEST
+test: 
   adapter: postgresql
-  tncoding: utf8
+  encoding: utf8
   database: tweetsmithy-test
   pool: 4
 
