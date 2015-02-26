@@ -1,23 +1,20 @@
-<html>
-     <head>
-        <title>Welcome to your TweetSmithy!</title>
-     </head>
-<body>
-    <div>
-      <center>
-        <h1> TweetSmithy </h1>
-      <p>
-        <%= form_tag "/search", method: "GET" do %>
-        <%= text_field_tag :search_word, "This is your anvil—type your tweet here.", size: 150, class: "form-control" %>
-        <input class="btn btn-default" type="submit" value="Submit"></button>
-        <%#= submit_tag "get those synonyms" %>
+<% content_for :title, "Welcome to your TweetSmithy!" %>
+<div style="text-align:center;">
+  <h1> TweetSmithy </h1>
+  <p>
+    <%= form_tag "/search", method: "GET" do %>
+      <%= text_field_tag :search_word, "This is your anvil—type your tweet here.", size: 150, class: "form-control" %>
+      <input class="btn btn-default" type="submit" value="Submit"></button>
+      <%#= submit_tag "get those synonyms" %>
     <% end %>
-    </p>
-      </center>
-    </div>
-   <%= yield %>
-<br/><br/>
+  </p>
+</div>
+<h4>What is the Smithy?</h4>
 
+<p>TweetSmithy aims to simplify and automate the wordsmithing that occurs while livetweeting events.</p>
 
+<p><em>Imagine this</em>, while attending a presentation at a conference the presenter drops a brilliant one-liner and you know it's the perfect quip to tweet to your followers. Your fingers quickly type the quote while still attempting to pay attention to the presentation.</p>
 
-</html>
+<p>"Oh no!" That perfect quote is a hundred characters over! So you start paring down words and abbreviating others while hoping you can avoid switching 'are' to 'r'. The tweet finally fits, but the presenter is already onto the next topic and you missed the introduction as you frantically edited that one quote. </p>
+
+<p>TweetSmithy automates this process by providing synonyms, related words and abbreviations. Future versions will only provide synonyms that are shorter than the original word, as well as provide shorter hypernyms (color is a hypernym of red) and hyponyms (spoon is a hyponym of cutlery, point out the use of passive voice, and offer single word substitutions for idioms and phrases. </p>
