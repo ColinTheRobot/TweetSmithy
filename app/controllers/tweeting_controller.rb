@@ -10,6 +10,11 @@ class TweetingController < ApplicationController
 
   def new
     @tweet = Tweet.new
+
+    respond_to do |format|
+      format.html {render :index}
+      format.json { render json: @tweet}
+    end
   end
 
   def create
