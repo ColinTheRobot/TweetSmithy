@@ -1,11 +1,21 @@
 class SmithyController < ApplicationController
 
   def index
-     #@synonyms = Wordnik.word.get_related
   end
 
-  def initialize_wordnik(options={})
-    options.merge!(ENV['WORDNIK_API_KEY'])
-    @wordnik = Wordnik::Wordnik.new(options)
+  def search
+    @words = {}
+
+    parsed_query.each do |word|
+      synonyms = Wordnik.word.get_related(word, type: 'synonym')
+
+      @words[word] = synonyms.first['words'] unless synonyms.empty?
+    end
+  end
+ 
+  private 
+ 
+  def parsed_query
+    params[:search_word].split
   end
 end
