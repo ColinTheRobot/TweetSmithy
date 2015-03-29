@@ -1,7 +1,6 @@
 class SmithyController < ApplicationController
 
   def index
-    binding.pry
   end
 
   def search
