@@ -14,4 +14,12 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
-.env
+
+*.DS_Store
+
+# Dot Env
+*.env
+
+# Ignore Vim swaps
+*.swp
+*.swo
