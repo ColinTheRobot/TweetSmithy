@@ -61,9 +61,6 @@ GEM
       execjs
     coffee-script-source (1.9.1)
     diff-lcs (1.2.5)
-    dotenv (1.0.2)
-    dotenv-rails (1.0.2)
-      dotenv (= 1.0.2)
     equalizer (0.0.9)
     erubis (2.7.0)
     ethon (0.7.3)
@@ -245,7 +242,6 @@ DEPENDENCIES
   bootstrap-sass
   capybara
   coffee-rails
-  dotenv-rails
   httparty
   jbuilder
   jquery-rails
